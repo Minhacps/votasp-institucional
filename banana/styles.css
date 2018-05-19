@@ -1,0 +1,38 @@
+/* Roxo - #57455c
+Roxo claro - #7e798c
+Amarelo - #feb557
+Branco - #FFFFFF */
+
+body{
+    font-family: 'Asap', sans-serif;
+}
+.navbar {
+    background-color: #57455c;
+}
+.nav-link {
+    color: #FFFFFF;
+}
+.nav-link:hover {
+    color: #feb557;
+}
+.btn-primary {
+    background: none;
+    border: 1px solid #FFFFFF;
+}
+.btn-primary:hover {
+    color: #57455c;
+    background: #feb557;
+    border: 1px solid #feb557;
+}
+.noticia-principal{
+    margin-bottom: 30px;
+}
+
+.noticia-principal img{
+    height: 250px;
+    max-width: 500px;
+}
+
+.card {
+    border: none;
+}
