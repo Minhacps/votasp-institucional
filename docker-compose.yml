@@ -17,7 +17,7 @@ services:
        - db
      build: .
      volumes:
-       - wordpress_content:/var/www/html/wp-content/uploads
+       - uploads:/var/www/html/wp-content/uploads
        - plugins:/var/www/html/wp-content/plugins
      ports:
        - "8000:80"
@@ -28,5 +28,5 @@ services:
          WORDPRESS_DB_PASSWORD: wordpress
 volumes:
     db_data:
-    wordpress_content:
+    uploads:
     plugins:
