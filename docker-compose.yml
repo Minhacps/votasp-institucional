@@ -1,32 +1,62 @@
-version: '3.3'
-
-services:
-   db:
-     image: mysql:5.7
-     volumes:
-       - db_data:/var/lib/mysql
-     restart: always
-     environment:
-       MYSQL_ROOT_PASSWORD: somewordpress
-       MYSQL_DATABASE: wordpress
-       MYSQL_USER: wordpress
-       MYSQL_PASSWORD: wordpress
-
-   wordpress:
-     depends_on:
-       - db
-     build: .
-     volumes:
-       - uploads:/var/www/html/wp-content/uploads
-       - plugins:/var/www/html/wp-content/plugins
-     ports:
-       - "8000:80"
-       restart: always
-       environment:
-         WORDPRESS_DB_HOST: db:3306
-         WORDPRESS_DB_USER: wordpress
-         WORDPRESS_DB_PASSWORD: wordpress
+version: '2'
 volumes:
-    db_data:
-    uploads:
-    plugins:
+  db_data: {}
+  institucional-db:
+    external: true
+    driver: rancher-nfs
+services:
+
+  wordpress:
+    image: wordpress:latest
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/WORDPRESS_DB_PASSWORD
+      WORDPRESS_DB_USER_FILE: /run/secrets/WORDPRESS_DB_USER
+      WORDPRESS_DB_NAME_FILE: /run/secrets/WORDPRESS_DB_NAME
+    links:
+    - database
+    secrets:
+
+    - source: INSTITUCIONAL_DATABASE
+      target: WORDPRESS_DB_NAME
+
+    - source: INSTITUCIONAL_DATABASE_USER
+      target: WORDPRESS_DB_USER
+
+    - source: INSTITUCIONAL_DATABASE_PASSWORD
+      target: WORDPRESS_DB_PASSWORD
+
+
+  database:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE_FILE: /run/secrets/MYSQL_DATABASE
+      MYSQL_PASSWORD_FILE: /run/secrets/MYSQL_PASSWORD
+      MYSQL_USER_FILE: /run/secrets/MYSQL_USER
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
+    volumes:
+    - institucional-db:/var/lib/mysql
+    secrets:
+
+    - source: INSTITUCIONAL_DATABASE
+      target: MYSQL_DATABASE
+
+    - source: INSTITUCIONAL_DATABASE_PASSWORD
+      target: MYSQL_PASSWORD
+
+    - source: INSTITUCIONAL_DATABASE_USER
+      target: MYSQL_USER
+
+    - source: INSTITUCIONAL_DATABASE_ROOT_PASSWORD
+      target: MYSQL_ROOT_PASSWORD
+
+
+secrets:
+  INSTITUCIONAL_DATABASE:
+    external: 'true'
+  INSTITUCIONAL_DATABASE_USER:
+    external: 'true'
+  INSTITUCIONAL_DATABASE_PASSWORD:
+    external: 'true'
+  INSTITUCIONAL_DATABASE_ROOT_PASSWORD:
+    external: 'true'
