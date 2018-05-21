@@ -18,6 +18,7 @@ services:
      build: .
      volumes:
        - wordpress_content:/var/www/html/wp-content/uploads
+       - plugins:/var/www/html/wp-content/plugins
      ports:
        - "8000:80"
        restart: always
@@ -28,3 +29,4 @@ services:
 volumes:
     db_data:
     wordpress_content:
+    plugins:
