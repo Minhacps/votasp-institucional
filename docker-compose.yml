@@ -19,56 +19,21 @@ services:
     image: votasp/institucional:$version
     environment:
       WORDPRESS_DB_HOST: database
-      WORDPRESS_DB_PASSWORD_FILE: /run/secrets/WORDPRESS_DB_PASSWORD
-      WORDPRESS_DB_USER_FILE: /run/secrets/WORDPRESS_DB_USER
-      WORDPRESS_DB_NAME_FILE: /run/secrets/WORDPRESS_DB_NAME
+      WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
+      WORDPRESS_DB_USER: $MYSQL_PASSWORD
+      WORDPRESS_DB_NAME: $MYSQL_DATABASE
     volumes:
     - institucional_uploads:/var/www/html/wp-content/uploads
     - institucional_plugins:/var/www/html/wp-content/plugins
     links:
     - database
-    secrets:
-
-    - source: INSTITUCIONAL_DATABASE
-      target: WORDPRESS_DB_NAME
-
-    - source: INSTITUCIONAL_DATABASE_USER
-      target: WORDPRESS_DB_USER
-
-    - source: INSTITUCIONAL_DATABASE_PASSWORD
-      target: WORDPRESS_DB_PASSWORD
-
 
   database:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE_FILE: /run/secrets/MYSQL_DATABASE
-      MYSQL_PASSWORD_FILE: /run/secrets/MYSQL_PASSWORD
-      MYSQL_USER_FILE: /run/secrets/MYSQL_USER
-      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
     volumes:
     - institucional-db:/var/lib/mysql
-    secrets:
-
-    - source: INSTITUCIONAL_DATABASE
-      target: MYSQL_DATABASE
-
-    - source: INSTITUCIONAL_DATABASE_PASSWORD
-      target: MYSQL_PASSWORD
-
-    - source: INSTITUCIONAL_DATABASE_USER
-      target: MYSQL_USER
-
-    - source: INSTITUCIONAL_DATABASE_ROOT_PASSWORD
-      target: MYSQL_ROOT_PASSWORD
-
-
-secrets:
-  INSTITUCIONAL_DATABASE:
-    external: 'true'
-  INSTITUCIONAL_DATABASE_USER:
-    external: 'true'
-  INSTITUCIONAL_DATABASE_PASSWORD:
-    external: 'true'
-  INSTITUCIONAL_DATABASE_ROOT_PASSWORD:
-    external: 'true'
