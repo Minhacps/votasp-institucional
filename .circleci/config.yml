@@ -1,0 +1,51 @@
+version: 2
+jobs:
+  deploy:
+    working_directory: ~/deploy
+    docker:
+      - image: protocool/rancher-circleci
+    steps:
+
+      - checkout
+
+      - setup_remote_docker
+
+      - run:
+          name: Build image
+          command: |
+            docker build -t votasp/institucional:$CIRCLE_BUILD_NUM .
+            docker build -t votasp/institucional:latest .
+
+      - run:
+          name: Deploy to docker hub
+          command: |
+            set +o pipefail
+            docker login -u $DOCKER_USER -p $DOCKER_PASS
+            # docker push votasp/institucional:$CIRCLE_BUILD_NUM
+            # docker push votasp/institucional:latest
+
+      - run:
+          name: Deploy to rancher
+          command: |
+            set +o pipefail
+
+            sed -i 's/$version/$CIRCLE_BUILD_NUM/g' "docker-compose.yml"
+
+            rancher-compose  \
+              --url http://rancher.votasp.org.br  \
+              --access-key $RANCHER_ACCESS_KEY  \
+              --secret-key $RANCHER_SECRET_KEY \
+              -p  Institucional \
+              --file docker-compose.yml  \
+              up -u -p -c -d
+
+
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
