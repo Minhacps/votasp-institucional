@@ -37,6 +37,10 @@ body{
     border: none;
 }
 
+.como-funciona .passos {
+    background-color: #ccc;
+}
+
 .realizacao img{
     width: 100px;
     padding: 0px 5px;
