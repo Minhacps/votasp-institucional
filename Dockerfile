@@ -1,3 +1,3 @@
 FROM wordpress:4-apache
 
-COPY theme /var/www/html/wp-content/themes
+COPY themes /var/www/html/wp-content/themes
