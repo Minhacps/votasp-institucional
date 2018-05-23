@@ -21,8 +21,8 @@ jobs:
           command: |
             set +o pipefail
             docker login -u $DOCKER_USER -p $DOCKER_PASS
-            # docker push votasp/institucional:$CIRCLE_BUILD_NUM
-            # docker push votasp/institucional:latest
+            docker push votasp/institucional:$CIRCLE_BUILD_NUM
+            docker push votasp/institucional:latest
 
       - run:
           name: Deploy to rancher
