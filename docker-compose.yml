@@ -2,15 +2,15 @@ version: '2'
 volumes:
   db_data: {}
   institucional-db:
-    external: true
+    external: false
     driver: rancher-nfs
 
   institucional_uploads:
-    external: true
+    external: false
     driver: rancher-nfs
 
   institucional_plugins:
-    external: true
+    external: false
     driver: rancher-nfs
 
 services:
