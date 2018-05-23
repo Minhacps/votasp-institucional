@@ -20,7 +20,7 @@ services:
     environment:
       WORDPRESS_DB_HOST: database
       WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
-      WORDPRESS_DB_USER: $MYSQL_PASSWORD
+      WORDPRESS_DB_USER: $MYSQL_USER
       WORDPRESS_DB_NAME: $MYSQL_DATABASE
     volumes:
     - institucional_uploads:/var/www/html/wp-content/uploads
