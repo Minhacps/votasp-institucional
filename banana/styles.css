@@ -8,12 +8,38 @@ body{
 }
 .navbar {
     background-color: #57455c;
+    padding: 15px 0;
 }
 .nav-link {
     color: #FFFFFF;
+    margin-right: 10px;
 }
 .nav-link:hover {
     color: #feb557;
+}
+.nav.social { margin-left: 5px; }
+.navbar .main-menu {
+    line-height: 1.3rem;
+}
+.navbar .menu.nav {
+    align-items: center;
+}
+.navbar .social-icon {
+    margin-left: 15px;
+}
+.navbar .social-icon:hover img {
+    opacity: 0.8;
+}
+.navbar .social-icon img {
+    width: 30px;
+    height: 30px;
+    opacity: 0.3;
+    transition: opacity .25s;
+    will-change: opacity;
+}
+.btn {
+    border-radius: 8px;
+    padding: 5px 25px;
 }
 .btn-primary {
     background: none;
@@ -27,7 +53,6 @@ body{
 .noticia-principal{
     margin-bottom: 30px;
 }
-
 .noticia-principal img{
     height: 250px;
     max-width: 500px;
