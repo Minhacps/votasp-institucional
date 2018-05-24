@@ -1,0 +1,39 @@
+version: '2'
+volumes:
+  db_data: {}
+  institucional-db:
+    external: false
+    driver: rancher-nfs
+
+  institucional_uploads:
+    external: false
+    driver: rancher-nfs
+
+  institucional_plugins:
+    external: false
+    driver: rancher-nfs
+
+services:
+
+  wordpress:
+    image: votasp/institucional:$version
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
+      WORDPRESS_DB_USER: $MYSQL_USER
+      WORDPRESS_DB_NAME: $MYSQL_DATABASE
+    volumes:
+    - institucional_uploads:/var/www/html/wp-content/uploads
+    - institucional_plugins:/var/www/html/wp-content/plugins
+    links:
+    - database
+
+  database:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+    volumes:
+    - institucional-db:/var/lib/mysql
