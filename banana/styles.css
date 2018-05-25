@@ -1,35 +1,38 @@
-/* Roxo - #57455c
-Roxo claro - #7e798c
-Amarelo - #feb557
-Branco - #FFFFFF */
+:root {
+    --roxo: #57455c;
+    --roxoClaro: #7e798c;
+    --amarelo: #feb557;
+    --amareloClaro: #fbdaab;
+}
 
 body{
     font-family: 'Asap', sans-serif;
 }
+
+/*
+ *   MENU
+ */
 .navbar {
-    background-color: #57455c;
+    background-color: var(--roxo);
+    background-color: 57455c;
     padding: 15px 0;
 }
+
 .nav-link {
     color: #FFFFFF;
     margin-right: 10px;
 }
+
 .nav-link:hover {
+    color: var(--amerelo);
     color: #feb557;
 }
+
 .nav.social { margin-left: 5px; }
-.navbar .main-menu {
-    line-height: 1.3rem;
-}
-.navbar .menu.nav {
-    align-items: center;
-}
-.navbar .social-icon {
-    margin-left: 15px;
-}
-.navbar .social-icon:hover img {
-    opacity: 0.8;
-}
+.navbar .main-menu { line-height: 1.3rem; }
+.navbar .menu.nav { align-items: center; }
+.navbar .social-icon { margin-left: 15px; }
+.navbar .social-icon:hover img { opacity: 0.8; }
 .navbar .social-icon img {
     width: 30px;
     height: 30px;
@@ -37,6 +40,11 @@ body{
     transition: opacity .25s;
     will-change: opacity;
 }
+
+/*
+ *   BOTÕES
+ */
+
 .btn {
     border-radius: 8px;
     padding: 5px 25px;
@@ -50,76 +58,50 @@ body{
     background: #feb557;
     border: 1px solid #feb557;
 }
-.noticia-principal{
-    margin-bottom: 30px;
-}
+
+/*
+ *   NOTICIAS
+ */
+.noticia-principal { margin-bottom: 30px; }
 .noticia-principal img{
     height: 250px;
     max-width: 500px;
 }
 
-.card {
-    border: none;
-}
-
-.como-funciona .passos {
-    background-color: #ccc;
-}
-
-.realizacao img{
-    width: 100px;
-    padding: 0px 5px;
-}
-
+/*
+ *   CARDS
+ */
+.card { border: none; }
+.como-funciona .passos { background-color: #ccc; }
 .footer {
     padding:10px;
     background-color: #57455c;
 }
 
-.fa {
-    padding: 20px;
-    font-size: 30px;
-    width: 50px;
-    text-align: center;
-    text-decoration: none;
-}
-
-/* Add a hover effect if you want */
-.fa:hover {
-    opacity: 0.7;
-}
-
-/* Set a specific color for each brand */
-
-/* Facebook */
-.fa-facebook {
-    background: #3B5998;
-    color: white;
-}
-
-/* Twitter */
-.fa-twitter {
-    background: #55ACEE;
-    color: white;
-}
-
-.fa-instagram {
-    background: #125688;
-    color: white;
-}
-
-.colaboradores-item {
-    text-align: center;
-}
-
-.colaboradores-item p {
-    margin-bottom: 0;
-}
-
+/*
+ *   REALIZADORES
+ */
+.colaboradores-item { text-align: center; }
+.colaboradores-item p { margin-bottom: 0; }
 .colaboradores-item img {
     margin: 0 auto 15px;
     clip-path: circle(50% at center);
 }
+.realizacao img{
+    width: 100px;
+    padding: 0px 5px;
+}
+
+
+/*
+ *   CARROUSEL
+ */
+.bx-wrapper .bx-prev { left: -20px; }
+.bx-wrapper .bx-next { right: -30px; }
+.bx-wrapper .bx-prev::before { transform: rotateZ(135deg); }
+.bx-wrapper .bx-next::before { transform: rotateZ(-45deg); }
+.bx-wrapper .bx-prev:active::before { transform: rotateZ(135deg) scale(0.85); }
+.bx-wrapper .bx-next:active::before { transform: rotateZ(-45deg) scale(0.85); }
 
 .bx-wrapper {
     box-shadow: unset;
@@ -131,30 +113,6 @@ body{
 .bx-wrapper .bx-next,
 .bx-wrapper .bx-prev {
     background: none;
-}
-
-.bx-wrapper .bx-prev {
-    left: -20px;
-}
-
-.bx-wrapper .bx-next {
-    right: -30px;
-}
-
-.bx-wrapper .bx-prev::before {
-    transform: rotateZ(135deg);
-}
-
-.bx-wrapper .bx-next::before {
-    transform: rotateZ(-45deg);
-}
-
-.bx-wrapper .bx-prev:active::before {
-    transform: rotateZ(135deg) scale(0.85);
-}
-
-.bx-wrapper .bx-next:active::before {
-    transform: rotateZ(-45deg) scale(0.85);
 }
 
 .bx-wrapper .bx-prev::before,
