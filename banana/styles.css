@@ -59,13 +59,70 @@ body{
     border: 1px solid #feb557;
 }
 
+.banner {
+    min-height: 500px;
+    text-transform: uppercase;
+    font-style: italic;
+    margin-bottom: 40px;
+}
+
 /*
  *   NOTICIAS
  */
-.noticia-principal { margin-bottom: 30px; }
-.noticia-principal img{
-    height: 250px;
-    max-width: 500px;
+.card p { margin: 0; }
+.card.noticia-principal .card-text {
+    font-size: 18px;
+    line-height: 22px;
+    overflow: hidden;
+    margin: 0;
+    max-height: 0;
+    transition: max-height .25s;
+    will-change: max-height;
+}
+.card:not(.noticia-principal) .card-body {
+    padding-left: 0;
+    padding-right: 0;
+}
+.card .card-img-top {
+    width: 100%;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    display: none;
+}
+.card .card-title {
+    font-size: 20px;
+    line-height: 22px;
+    font-weight: 600;
+    border-left: 5px solid var(--amarelo);
+    padding-left: 10px;
+}
+.card .text-muted {
+    font-size: 14px;
+    line-height: 14px;
+    margin-left: 15px;
+}
+
+@media min-width( 770px ) {
+    .noticia-principal { margin-bottom: 30px; }
+    .card.noticia-principal .card-title {
+        font-size: 28px;
+        line-height: 30px;
+    }
+    .card.noticia-principal .card-body {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    .card.noticia-principal .card-text {
+        font-size: 22px;
+        line-height: 28px;
+        max-height: 500px;
+    }
+}
+@media min-width( 1024px ) {
+    .card.noticia-principal .card-title {
+        font-size: 30px;
+        line-height: 36px;
+    }
 }
 
 /*
@@ -96,8 +153,7 @@ body{
 /*
  *   CARROUSEL
  */
-.bx-wrapper .bx-prev { left: -20px; }
-.bx-wrapper .bx-next { right: -30px; }
+
 .bx-wrapper .bx-prev::before { transform: rotateZ(135deg); }
 .bx-wrapper .bx-next::before { transform: rotateZ(-45deg); }
 .bx-wrapper .bx-prev:active::before { transform: rotateZ(135deg) scale(0.85); }
@@ -115,6 +171,11 @@ body{
     background: none;
 }
 
+.bx-wrapper .bx-controls-direction a {
+    width: 17px;
+    height: 17px;
+}
+
 .bx-wrapper .bx-prev::before,
 .bx-wrapper .bx-next::before {
     content: '';
@@ -126,4 +187,8 @@ body{
     border-bottom: 4px solid #868686;
     border-radius: 4px;
     transition: transform .2s;
+}
+@media min-width( 770px ) {
+    .bx-wrapper .bx-prev { left: -20px; }
+    .bx-wrapper .bx-next { right: -30px; }
 }
