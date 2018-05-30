@@ -8,26 +8,9 @@
     <link href="https://fonts.googleapis.com/css?family=Asap:400,600" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
     <link rel="stylesheet" href="./styles.css">
-
-    <script>
-        $(document).ready(function(){
-            $('#colaboradores.slider').bxSlider({
-                minSlides: 3,
-                maxSlides: 7,
-                slideWidth: 150,
-                moveSlides: 1,
-                hideControlOnEnd: true,
-                pager: false,
-                auto: true,
-            });
-        });
-    </script>
 </head>
 <body>
 
@@ -225,14 +208,26 @@
                         <img src="img/logos/logoifspfundobranco.png" alt="Logo IFSP Campinas">
                         <img src="img/logos/logofecampinas.png" alt="Logo Front End Campinas">
                     </div>
-                    <div class="col redes-sociais">
-                        <a href="https://www.facebook.com/minhacampinas" class="fa fa-facebook"></a>
-                        <a href="https://twitter.com/minhacampinas" class="fa fa-twitter"></a>
-                        <a href="https://www.instagram.com/minha_campinas/" class="fa fa-instagram"></a>
-                    </div>
                 </div>
             </div>
         </footer>
     </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function(){
+            $('#colaboradores.slider').bxSlider({
+                minSlides: 3,
+                maxSlides: 7,
+                slideWidth: 150,
+                moveSlides: 1,
+                hideControlOnEnd: true,
+                pager: false,
+                auto: true,
+            });
+        });
+    </script>
 </body>
 </html>
