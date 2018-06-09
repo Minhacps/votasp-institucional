@@ -2,3 +2,7 @@
 .cache
 dist
 node_modules
+index.php
+languages/
+themes/index.php
+uploads/
