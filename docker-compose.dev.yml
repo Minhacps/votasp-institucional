@@ -9,6 +9,8 @@ services:
       WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
       WORDPRESS_DB_USER: $MYSQL_USER
       WORDPRESS_DB_NAME: $MYSQL_DATABASE
+    ports:
+      - 3000:80
     volumes:
     - ./data/institucional_uploads:/var/www/html/wp-content/uploads
     - ./data/institucional_plugins:/var/www/html/wp-content/plugins
@@ -23,4 +25,4 @@ services:
       MYSQL_USER: $MYSQL_USER
       MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
     volumes:
-    - institucional-db:/var/lib/mysql
+    - ./data/institucional-db:/var/lib/mysql
