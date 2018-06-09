@@ -1,0 +1,26 @@
+version: '2'
+
+services:
+
+  wordpress:
+    build: .
+    environment:
+      WORDPRESS_DB_HOST: database
+      WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
+      WORDPRESS_DB_USER: $MYSQL_USER
+      WORDPRESS_DB_NAME: $MYSQL_DATABASE
+    volumes:
+    - ./data/institucional_uploads:/var/www/html/wp-content/uploads
+    - ./data/institucional_plugins:/var/www/html/wp-content/plugins
+    links:
+    - database
+
+  database:
+    image: mysql:5.7
+    environment:
+      MYSQL_DATABASE: $MYSQL_DATABASE
+      MYSQL_PASSWORD: $MYSQL_PASSWORD
+      MYSQL_USER: $MYSQL_USER
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+    volumes:
+    - institucional-db:/var/lib/mysql
