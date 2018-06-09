@@ -2,7 +2,7 @@
 .cache
 dist
 node_modules
-index.php
+./index.php
 languages/
-themes/index.php
+./themes/index.php
 uploads/
