@@ -29,7 +29,7 @@ jobs:
           command: |
             set +o pipefail
 
-            sed -i 's/$version/$CIRCLE_BUILD_NUM/g' "docker-compose.yml"
+            sed -i 's/$version/$CIRCLE_BUILD_NUM/g' "docker-compose.production.yml"
 
             rancher-compose  \
               --url http://rancher.votasp.org.br  \
