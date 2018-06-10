@@ -29,7 +29,7 @@ services:
     - database
 
   database:
-    image: mysql:5.7
+    image: mysql/mysql-server
     environment:
       MYSQL_DATABASE: $MYSQL_DATABASE
       MYSQL_PASSWORD: $MYSQL_PASSWORD
