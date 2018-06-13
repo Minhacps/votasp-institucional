@@ -56,10 +56,10 @@
 
                 <ul class="nav social">
                     <li class="social-icon facebook">
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icone-facebook.svg" alt="Link para Facebook do VotaSP"></a>
+                        <a taget="_blank" href="https://www.facebook.com/minhacampinas/"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icone-facebook.svg" alt="Link para Facebook do VotaSP"></a>
                     </li>
                     <li class="social-icon twitter">
-                        <a href="#"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icone-twitter.svg" alt="Link para Twitter do VotaSP"></a>
+                        <a taget="_blank" href="https://twitter.com/minhacampinas"><img src="<?php echo get_template_directory_uri(); ?>/assets/images/icone-twitter.svg" alt="Link para Twitter do VotaSP"></a>
                     </li>
                 </ul>
             </div>
