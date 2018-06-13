@@ -14,6 +14,7 @@ services:
     volumes:
     - ./data/institucional_uploads:/var/www/html/wp-content/uploads
     - ./data/institucional_plugins:/var/www/html/wp-content/plugins
+    - ./themes/votasp:/var/www/html/wp-content/themes/votasp
     links:
     - database
 
