@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col">
                 <h2 class="bold upper">O Projeto</h2>
-                <?php the_field( 'o_projeto' ); ?>
+                <?php echo get_post_meta( get_the_ID(), '_o_projeto', true ); ?>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
             <div class="col">
                 <h2 class="bold upper">Realização</h2>
                 <br />
-                <?php the_field( 'realizacao' ); ?>
+                <?php echo get_post_meta( get_the_ID(), '_realizacao', true ); ?>
             </div>
         </div>
         <?php do_action( 'realizadores_home' ); ?>
