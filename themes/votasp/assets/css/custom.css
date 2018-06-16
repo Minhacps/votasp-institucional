@@ -275,6 +275,7 @@ body{
     transform: translateY(-12px);
     position: absolute;
     left: calc(65px - 15px);
+    font-weight: bold;
 }
 
 .como-funciona { margin: 20px 0; }
