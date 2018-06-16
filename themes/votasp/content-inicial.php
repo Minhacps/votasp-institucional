@@ -16,7 +16,7 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <h2 class="bold upper">O Projeto</h2>
+                <h2 class="bold upper">Como Funciona</h2>
                 <?php echo get_post_meta( get_the_ID(), '_o_projeto', true ); ?>
             </div>
         </div>
