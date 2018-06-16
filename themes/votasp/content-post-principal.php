@@ -16,7 +16,7 @@
             <a href="<?php the_permalink(); ?>">
                 <p class="card-text"><?php echo wp_trim_words( get_the_content(), 25 ); ?></p>
             </a>
-            <p><small class="text-muted clock"><?php the_date(); ?></small></p>
+            <p><small class="text-muted clock"><?php echo get_the_date(); ?></small></p>
         </div>
     </article>
 </div>

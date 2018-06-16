@@ -13,7 +13,7 @@
             <a href="<?php the_permalink(); ?>">
                 <h4 class="card-title"><?php the_title() ?></h4>
             </a>
-            <p><small class="text-muted clock"><?php the_date(); ?></small></p>
+            <p><small class="text-muted clock"><?php echo get_the_date(); ?></small></p>
         </div>
     </article>
 </div>
