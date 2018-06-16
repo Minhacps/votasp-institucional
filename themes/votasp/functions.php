@@ -391,6 +391,7 @@ function render_realizadores() {
 		'status' => 'publish',
 		'posts_per_page' =>  -1,
 		'orderby' => 'title',
+		'order' => 'ASC',
 	]);
 	$realizadores = new WP_Query( $realizadores_args );
 
