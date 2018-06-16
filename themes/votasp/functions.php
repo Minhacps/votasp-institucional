@@ -389,6 +389,7 @@ function render_realizadores() {
 	$realizadores_args = apply_filters( 'realizadores_args', [
 		'post_type' => 'realizador',
 		'status' => 'publish',
+		'posts_per_page' =>  -1,
 	]);
 	$realizadores = new WP_Query( $realizadores_args );
 
