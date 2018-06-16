@@ -16,6 +16,10 @@
 define( 'IMAGES_PATH', get_template_directory_uri() . '/assets/images/' );
 define( 'THEME_VERSION', '1.0.0' );
 
+if( !defined('WP_AUTO_UPDATE_CORE') ) {
+	define( 'WP_AUTO_UPDATE_CORE', false );
+}
+
 /**
  * Sets content width.
  */
