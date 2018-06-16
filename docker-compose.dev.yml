@@ -6,21 +6,24 @@ services:
     build: .
     environment:
       WORDPRESS_DB_HOST: database
-      WORDPRESS_DB_PASSWORD: $MYSQL_PASSWORD
-      WORDPRESS_DB_USER: $MYSQL_USER
-      WORDPRESS_DB_NAME: $MYSQL_DATABASE
+      WORDPRESS_DB_PASSWORD: senhasupersegura
+      WORDPRESS_DB_USER: usuariosuperseguro
+      WORDPRESS_DB_NAME: wordpress
+    ports:
+      - 3000:80
     volumes:
     - ./data/institucional_uploads:/var/www/html/wp-content/uploads
     - ./data/institucional_plugins:/var/www/html/wp-content/plugins
+    - ./themes/votasp:/var/www/html/wp-content/themes/votasp
     links:
     - database
 
   database:
     image: mysql:5.7
     environment:
-      MYSQL_DATABASE: $MYSQL_DATABASE
-      MYSQL_PASSWORD: $MYSQL_PASSWORD
-      MYSQL_USER: $MYSQL_USER
-      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: wordpress
+      MYSQL_PASSWORD: senhasupersegura
+      MYSQL_USER: usuariosuperseguro
+      MYSQL_ROOT_PASSWORD: senhasupersegura
     volumes:
-    - institucional-db:/var/lib/mysql
+    - ./data/institucional-db:/var/lib/mysql

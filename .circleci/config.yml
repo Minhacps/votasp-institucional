@@ -29,14 +29,14 @@ jobs:
           command: |
             set +o pipefail
 
-            sed -i 's/$version/$CIRCLE_BUILD_NUM/g' "docker-compose.yml"
+            sed -i 's/$version/$CIRCLE_BUILD_NUM/g' "docker-compose.production.yml"
 
             rancher-compose  \
               --url http://rancher.votasp.org.br  \
               --access-key $RANCHER_ACCESS_KEY  \
               --secret-key $RANCHER_SECRET_KEY \
               -p  Institucional \
-              --file docker-compose.yml  \
+              --file docker-compose.production.yml  \
               up -u -p -c -d
 
 
