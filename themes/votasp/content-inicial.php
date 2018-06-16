@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col">
                 <h2 class="bold upper">Como Funciona</h2>
-                <?php echo get_post_meta( get_the_ID(), '_o_projeto', true ); ?>
+                <?php echo wpautop( get_post_meta( get_the_ID(), '_o_projeto', true ) ); ?>
             </div>
         </div>
 
@@ -59,7 +59,7 @@
             <div class="col">
                 <h2 class="bold upper">Realização</h2>
                 <br />
-                <?php echo get_post_meta( get_the_ID(), '_realizacao', true ); ?>
+                <?php echo wpautop( get_post_meta( get_the_ID(), '_realizacao', true ) ); ?>
             </div>
         </div>
         <?php do_action( 'realizadores_home' ); ?>
