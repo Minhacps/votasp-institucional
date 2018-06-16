@@ -332,6 +332,8 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
 }
 
+require_once get_template_directory() . '/inc/realizadores.php';
+
 function get_posts_loop() {
 	$post_args = apply_filters( 'post_loop_args', [
 		'post_type' => 'post',
@@ -377,26 +379,6 @@ function main_menu_links_attributes( $atributos ) {
 	return $atributos;
 }
 add_filter( 'nav_menu_link_attributes', 'main_menu_links_attributes' );
-
-function votasp_contribuintes_post_type() {
-	$realizadores = new Odin_Post_Type(
-		'Realizador',
-		'realizador'
-	);
-
-	$realizadores->set_labels([
-		'menu_name' => __( 'Realizadores', 'odin' ),
-	]);
-
-	$realizadores->set_arguments([
-		'menu_icon' => 'dashicons-groups',
-		'menu_position' => 20,
-		'has_archive' => false,
-		'publicly_queryable' => false,
-		'supports' => [ 'title', 'thumbnail' ],
-	]);
-}
-add_action( 'init', 'votasp_contribuintes_post_type', 1 );
 
 function render_realizadores() {
 	$realizadores_args = apply_filters( 'realizadores_args', [
