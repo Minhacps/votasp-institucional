@@ -59,7 +59,7 @@ function add_realizacao_metabox() {
         array(
             array(
                 'id' => '_colaborou_com',
-                'label' => __( 'Calaborou com', 'odin' ),
+                'label' => __( 'Colaborou com', 'odin' ),
                 'type' => 'text',
             ),
         )
