@@ -125,6 +125,7 @@ body{
 .noticia .thumbnail img {
     width: 100%;
     height: auto;
+    display: none;
 }
 .noticia.noticia-principal .card-text {
     font-size: 18px;
@@ -170,6 +171,7 @@ body{
 
 @media ( min-width: 576px ) {
     .noticia.noticia-principal { margin-bottom: 20px; }
+    .noticia.noticia-principal .thumbnail img { display: block; }
     .noticia.noticia-principal .card-img-top {
         display: block;
         padding: 0;        
@@ -206,6 +208,9 @@ body{
     .noticia .text-muted { margin-left: 0; }
     .noticia .card-text { max-height: 500px; }
     
+    .noticia .thumbnail img {
+        display: block;
+    }
     .noticia .card-img-top {
         display: block;
         padding: 0;        
