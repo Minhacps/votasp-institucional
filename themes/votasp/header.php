@@ -18,7 +18,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
     <?php if ( ! get_option( 'site_icon' ) ) : ?>
-        <link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico" rel="shortcut icon" />
+        <link href="<?php echo get_template_directory_uri(); ?>/assets/images/favicon.ico?ver=<?php echo THEME_VERSION; ?>" rel="shortcut icon" />
     <?php
         endif;
         wp_head();
