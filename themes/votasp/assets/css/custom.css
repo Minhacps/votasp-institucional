@@ -93,6 +93,10 @@ body{
     }
 }
 
+.banner .row {
+    display: block;
+}
+
 /*
  *   BOTÕES
  */
