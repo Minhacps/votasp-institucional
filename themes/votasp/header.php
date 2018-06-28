@@ -62,7 +62,7 @@
                     );
                 ?>
 
-                <a href="https://benfeitoria.com/votasp" target="_blank" class="btn btn-primary d-none d-lg-block">Contribua!</a>
+                <a href="http://votasp.minhacampinas.org.br" target="_blank" class="btn btn-primary d-none d-lg-block">Inscreva-se!</a>
 
                 <ul class="nav social">
                     <li class="social-icon facebook">
