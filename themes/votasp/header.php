@@ -62,7 +62,7 @@
                     );
                 ?>
 
-                <a href="http://www.votasp.minhacampinas.org.br" taget="_blank" class="btn btn-primary d-none d-lg-block" alt="Link para a página de recebimento de informações.">Participe!</a>
+                <a href="http://www.votasp.minhacampinas.org.br/#block-9731" taget="_blank" class="btn btn-primary d-none d-lg-block" alt="Link para a página de recebimento de informações.">Contribua!</a>
                 
 
                 <ul class="nav social">
