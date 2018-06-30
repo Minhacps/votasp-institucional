@@ -62,7 +62,8 @@
                     );
                 ?>
 
-                <a href="http://votasp.minhacampinas.org.br" target="_blank" class="btn btn-primary d-none d-lg-block">Participe!</a>
+                <a href="http://www.votasp.minhacampinas.org.br" taget="_blank" class="btn btn-primary d-none d-lg-block" alt="Link para a página de recebimento de informações.">Participe!</a>
+                
 
                 <ul class="nav social">
                     <li class="social-icon facebook">
